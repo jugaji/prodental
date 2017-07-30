@@ -1,0 +1,13 @@
+# Connection url for the database "prodental"
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/prodentalpinos?useSSL=false
+    username: root
+    password: root
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
