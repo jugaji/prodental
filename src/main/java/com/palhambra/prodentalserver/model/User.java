@@ -190,6 +190,10 @@ public class User {
 		return appointmentList;
 	}
 
+	public void addAppointmentToList(Appointment appointment) {
+		appointmentList.add(appointment);
+	}
+
 	public void setAppointmentList(List<Appointment> appointmentList) {
 		this.appointmentList = appointmentList;
 	}

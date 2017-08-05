@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.palhambra.prodentalserver.dto.UserDTO;
+import com.palhambra.prodentalserver.model.Appointment;
 import com.palhambra.prodentalserver.model.User;
 import com.palhambra.prodentalserver.service.UserService;
+
+import javassist.NotFoundException;
 
 @RestController
 @RequestMapping(value = "/api/patient")
@@ -53,6 +56,12 @@ public class PatientController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public void deleteUser(@PathVariable(name = "id") Long id) {
 		userService.getUser(id);
+	}
+
+	@RequestMapping(value = "/addappointment/{id}", method = RequestMethod.POST)
+	public void addAppointmentUser(@PathVariable(name = "idUser") Long idUser, @RequestBody Appointment appointment)
+			throws NotFoundException {
+		userService.addAppointment(appointment, idUser);
 	}
 
 }

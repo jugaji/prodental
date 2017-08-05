@@ -9,5 +9,6 @@ spring:
     
   jpa:
     hibernate:
-      ddl-auto: create
+#      ddl-auto: create
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#     generate-ddl: false
